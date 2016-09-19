@@ -11,5 +11,17 @@ osmfilter planet.o5m --drop-author --keep='boundary=administrative boundary=poli
 # Build
 
 ```
-docker build  -t  overpass-api:0.7.52 .
+docker build -t overpass-api:0.7.52 .
+```
+
+# Run
+
+```
+docker run -d -p 50080:80 overpass-api:0.7.52
+```
+
+# Test
+
+```
+http://localhost:50080/api/interpreter?data=[out:json];is_in(53,10);rel(pivot);out geom;
 ```
