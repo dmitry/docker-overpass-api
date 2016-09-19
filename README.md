@@ -20,6 +20,12 @@ docker build -t overpass-api:0.7.52 .
 docker run -d -p 50080:80 overpass-api:0.7.52
 ```
 
+wait till it start http server
+
+```
+docker logs PID
+```
+
 # Test
 
 ```
