@@ -3,7 +3,7 @@ FROM ubuntu:trusty
 # no tty
 ARG DEBIAN_FRONTEND=noninteractive
 
-ARG OSM_VER=0.7.52
+ARG OSM_VER=0.7.53
 ENV EXEC_DIR=/srv/osm3s
 ENV DB_DIR=/srv/osm3s/db
 
