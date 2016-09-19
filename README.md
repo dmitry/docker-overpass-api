@@ -4,6 +4,10 @@ Docker Overpass API container
 # Get filtered planet file
 
 ```
+curl -o planet.osm.bz2 http://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/planet/planet-latest.osm.bz2
+```
+
+```
 bzcat planet-latest.osm.bz2 | osmconvert - --drop-author --out-o5m > planet.o5m
 osmfilter planet.o5m --drop-author --keep='boundary=administrative boundary=political' | bzip2 > planet.osm.bz2
 ```
