@@ -23,6 +23,8 @@ RUN build_deps="g++ make expat libexpat1-dev zlib1g-dev curl wget" \
   && ./configure CXXFLAGS="-O2" --prefix="$EXEC_DIR" \
   && make install
 
+RUN cp -a rules $DB_DIR/rules
+
 RUN cd .. \
   && rm -rf osm-3s_v*
 
@@ -34,9 +36,6 @@ ARG PLANET_FILE=/planet.osm.bz2
 
 RUN set -x && /srv/osm3s/bin/init_osm3s.sh "$PLANET_FILE" "$DB_DIR" "$EXEC_DIR" \
   && rm -f "$PLANET_FILE"
-
-RUN mkdir $DB_DIR/rules
-COPY areas.osm3s /srv/osm3s/db/rules/areas.osm3s
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY overpass /etc/init.d
