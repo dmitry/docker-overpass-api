@@ -15,13 +15,13 @@ osmfilter planet.o5m --drop-author --keep='boundary=administrative boundary=poli
 # Build
 
 ```
-docker build -t overpass-api:0.7.52 .
+docker build -t overpass-api:0.7.53 .
 ```
 
 # Run
 
 ```
-docker run -d -p 50080:80 overpass-api:0.7.52
+docker run -d -p 50080:80 overpass-api:0.7.53
 ```
 
 wait till it start http server
