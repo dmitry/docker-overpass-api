@@ -35,3 +35,7 @@ docker logs PID
 ```
 http://localhost:50080/api/interpreter?data=[out:json];is_in(53,10);rel(pivot);out geom;
 ```
+
+## Credits
+
+Built for [Geo Pointer](https://github.com/dmitry/geo_pointer) - API built with ruby sinatra to retrieve hierarchical bounding shapes of the administrative regions from OSM data through Overpass API from points.
