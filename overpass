@@ -47,9 +47,6 @@ case "$1" in
     else
       log_end_msg 1
     fi 
-    sleep 5
-    $EXEC_DIR/bin/osm3s_query --progress --rules <$DB_DIR/rules/areas.osm3s
-
     ;;
 
   stop)

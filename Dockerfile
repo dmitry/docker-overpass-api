@@ -42,6 +42,10 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY overpass /etc/init.d
 COPY docker-start /usr/local/sbin
 
+RUN service overpass start && sleep 5 && $EXEC_DIR/bin/osm3s_query --progress --rules <$DB_DIR/rules/areas.osm3s #service import start
+RUN rm /var/run/dispatcher.pid
+RUN rm /var/run/dispatcher_areas.pid
+
 CMD ["/usr/local/sbin/docker-start"]
 
 EXPOSE 80
